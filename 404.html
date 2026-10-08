@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Сторінку не знайдено — Lazurit</title>
+    <script>
+      // GitHub Pages віддає цей файл для будь-якої неіснуючої адреси.
+      // Повертаємо відвідувача в корінь проєкту: /repo/ для project pages, / для user pages та власних доменів.
+      (function () {
+        var l = window.location;
+        var parts = l.pathname.split('/').filter(Boolean);
+        var onProjectPages = /\.github\.io$/i.test(l.hostname) && parts.length > 0;
+        var base = onProjectPages ? '/' + parts[0] + '/' : '/';
+        if (parts.length === 1 && /\/$/.test(l.pathname)) base = '/';
+        l.replace(base + l.hash);
+      })();
+    </script>
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #1a2240; color: #eae7df; font-family: system-ui, sans-serif; }
+      a { color: #cbb27a; }
+    </style>
+  </head>
+  <body>
+    <p>Перенаправляємо на головну… <a href="/">Відкрити вручну</a></p>
+  </body>
+</html>
